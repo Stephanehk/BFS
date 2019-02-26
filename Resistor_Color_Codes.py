@@ -46,4 +46,5 @@ def color_code_it (input_):
     band.append("gold")
     return band
 
-color_code_it ("1k ohms")
+color_code_it ("10 ohms")
+
