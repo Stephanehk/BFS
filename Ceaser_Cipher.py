@@ -9,7 +9,7 @@ Created on Tue Feb 26 09:30:23 2019
 #(x+n) % 26
 import string
 
-def cipher (word, offset):
+def encyrpt (word, offset):
     encrypted_word = []
     alphabet = list(string.ascii_lowercase)
     for i in range (len(word)):
@@ -18,4 +18,14 @@ def cipher (word, offset):
         encrypted_word.append(encrypted)
     return encrypted_word
 
-cipher ("hello", 20)
+def decrypt (word, offset):
+    encrypted_word = []
+    alphabet = list(string.ascii_lowercase)
+    for i in range (len(word)):
+        index_ = alphabet.index(word[i])
+        encrypted  = alphabet[(index_ - offset) % 26] 
+        encrypted_word.append(encrypted)
+    return encrypted_word
+
+encrypted = encyrpt ("hello", 20)
+decrypt (encrypted, 20)

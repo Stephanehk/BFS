@@ -47,4 +47,3 @@ def color_code_it (input_):
     return band
 
 color_code_it ("10 ohms")
-
