@@ -14,7 +14,7 @@ def encyrpt (word, offset):
     alphabet = list(string.ascii_lowercase)
     for i in range (len(word)):
         index_ = alphabet.index(word[i])
-        encrypted  = alphabet[(index_ + offset) % 26] 
+        encrypted  = alphabet[(index_ + offset) % 26]
         encrypted_word.append(encrypted)
     return encrypted_word
 
@@ -23,9 +23,10 @@ def decrypt (word, offset):
     alphabet = list(string.ascii_lowercase)
     for i in range (len(word)):
         index_ = alphabet.index(word[i])
-        encrypted  = alphabet[(index_ - offset) % 26] 
+        encrypted  = alphabet[(index_ - offset) % 26]
         encrypted_word.append(encrypted)
     return encrypted_word
-
-encrypted = encyrpt ("hello", 20)
-decrypt (encrypted, 20)
+#
+encrypted = encyrpt ("science", 4)
+print (encrypted)
+#decrypt (encrypted, 20)

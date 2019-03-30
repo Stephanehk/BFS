@@ -11,6 +11,6 @@ def fib (n):
     a = np.power((1 + np.sqrt(5))/2,n)
     b = np.power((1 - np.sqrt(5))/2,n)
     fib = (a-b)/np.sqrt(5)
-    return fib
+    return int(fib)
 
 fib (1000)

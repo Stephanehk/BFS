@@ -29,5 +29,3 @@ def unique_in_order (array):
     return no_duplicates
 #
 unique_in_order ("AAAABBBCCDAABBB")
-
-

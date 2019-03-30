@@ -8,7 +8,7 @@ offset = [1, 2, 3, 4]
 encrypted = [['i', 'f', 'm', 'm', 'p'], ['y', 'q', 't', 'n', 'f'], ['f', 'r', 'p', 's', 'x', 'w', 'h', 'u'], ['w', 'g', 'm', 'i', 'r', 'g', 'i']]
 
 def test_cypher_encyrpt():
-    for i in range (len(encrypted)):
+    for i in range (len(encrypted)):            
         yield check_cypher_decrypt, encrypted[i],offset[i],expected_words[i]
 
 
