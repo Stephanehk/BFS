@@ -30,7 +30,7 @@ def generate_maze (size, difficulty):
                 component = components[choice([0,1],p=easy)]
             maze[i][j] = component
     return maze
-    
+
 def possible_paths(matrix, node):
     possible_paths = []
     #get x,y coordinates from node
@@ -46,10 +46,10 @@ def possible_paths(matrix, node):
     return possible_paths
 
 def bfs(maze, node, goal):
-    
+
     queue = [[node]]
     visited = []
-    #while there are still unvisited paths 
+    #while there are still unvisited paths
     while queue:
         path = queue.pop(0)
         node = path[-1]
@@ -68,10 +68,25 @@ def bfs(maze, node, goal):
                 #if the position is the goal
                 if position == goal:
                     for x,y in path_found:
-                        maze[x][y] = 'X'
-                    return maze
-    return None
+                        maze[x][y] = 'x'
+                    return True
+    return False
 
+def bfs(maze):
+    matrix = list(map(list, maze.splitlines()))
+    stack = [[0, 0]]
+    length = len(matrix)
+    while len(stack):
+      x, y = stack.pop()
+      if matrix[x][y] == '.':
+        matrix[x][y] = 'x'
+        for x, y in (x, y-1), (x, y+1), (x-1, y), (x+1, y):
+          if 0 <= x < length and 0 <= y < length:
+            stack.append((x, y))
+    if matrix[length-1][length-1] == 'x':
+        return True
+    else:
+        return False
 
 maze = generate_maze(5,"medium")
 pprint.pprint(bfs(maze,[0,0], [4,4]))
