@@ -7,11 +7,9 @@ class Node:
         self.val = val
         self.distance = distance
 
-
 matrix = [["0","1","2"],
          ["5","-4","2"],
          ["1","3","1"]]
-
 
 def add_weightings (maze,destination):
     for i in range (len(maze)):
@@ -72,7 +70,6 @@ def check_direction(maze, current, destination, possible_next_steps, current_cos
     except IndexError:
         pass
     return possible_next_steps
-
 
 def travel_lowest (maze, current, closed_list, destination):
     x,y = current.x,current.y
